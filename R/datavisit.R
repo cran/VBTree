@@ -23,7 +23,7 @@
 #'
 #' #Setting subset in different forms, for example the pattern
 #' #"Strain-(900~1100)-(0.01, 1)-0.6" is desired:
-#' subunregdl <- list(c(1), c(1:5), c(2,4), c(1)) # undifined double list
+#' subunregdl <- list(c(1), c(1:5), c(2,4), c(1)) # undefined double list
 #' subregdl <- advbtinq(vbt, subunregdl) # regularized double list
 #' subvbt <- dl2vbt(subregdl) # sub vector binary tree
 #' subts <- vbt2ts(subvbt) # tensor
@@ -31,7 +31,6 @@
 #' subchrvec <- as.vector(subarr) # character vector
 #'
 #' #Visit the data through different methods:
-#' datavisit(datatest, subunregdl) # by integer vector
 #' datavisit(datatest, subunregdl) # by handmade double list
 #' datavisit(datatest, subregdl) # by defined double list
 #' datavisit(datatest, subvbt) # by vector binary tree
@@ -48,13 +47,13 @@ datavisit <- function(data, inq){
   }
 
   # treat different methods to vector binary tree visit
-  if(class(inq)=="tensor"){
+  if(inherits(inq, "tensor")){
     inq <- ts2vbt(inq)
   }
-  if(class(inq)=="array"){
+  if(inherits(inq, "array")){
     inq <- arr2vbt(inq)
   }
-  if(class(inq)=="Double.List"){
+  if(inherits(inq, "Double.List")){
     inq <- dl2vbt(inq)
   }
   titles <- as.character(colnames(data))
@@ -74,7 +73,7 @@ datavisit <- function(data, inq){
       inq <- vbtsub(vbttitles, inq = round(inq))
     }
   }
-  if (class(inq)!="Vector.Binary.Tree"){
+  if (!inherits(inq, "Vector.Binary.Tree")){
     stop("input argument inq must be a character vector, an integer vector, a double list, a tensor, an array or a vector binary tree.", call. = FALSE)
   }
 

@@ -29,6 +29,7 @@ Prakash, P. K. S. & Rao, Achyutuni Sri Krishna (2016). R Data Structures and Alg
 \code{\link[tensorA:to.tensor]{to.tensor}}, \code{\link[tensorA:pos.tensor]{pos.tensor}}.
 }
 \examples{
+\donttest{
 #View the data to be visited:
 summary(datatest)
 colnames(datatest)
@@ -48,11 +49,11 @@ subarr <- vbt2arr(subvbt) # array
 subchrvec <- as.vector(subarr) # character vector
 
 #Visit the data through different methods:
-datavisit(datatest, c(1,2,2,1)) # by integer vector
 datavisit(datatest, subunregdl) # by handmade double list
 datavisit(datatest, subregdl) # by defined double list
 datavisit(datatest, subvbt) # by vector binary tree
 datavisit(datatest, subts) # by tensor
 datavisit(datatest, subarr) # by array
 datavisit(datatest, subchrvec) # by character vector
+}
 }

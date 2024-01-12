@@ -17,7 +17,7 @@
 #' ts2dl(ts)
 #' @keywords tensor Double.List
 ts2dl <- function(x, ...){
-  if (class(x) != "tensor"){
+  if (!inherits(x, "tensor")){
     stop("x must be a tensor.", call. = FALSE)
   }
   x <- as.vector(x)
@@ -44,7 +44,7 @@ ts2dl <- function(x, ...){
 #' ts2vbt(ts)
 #' @keywords tensor Vector.Binary.Tree
 ts2vbt <- function(x, ...){
-  if (class(x) != "tensor"){
+  if (!inherits(x, "tensor")){
     stop("x must be a tensor.", call. = FALSE)
   }
   x <- as.vector(x)

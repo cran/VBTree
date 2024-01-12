@@ -17,7 +17,7 @@
 #' arr2dl(arr)
 #' @keywords array Double.List
 arr2dl <- function(x, ...){
-  if (class(x) != "array"){
+  if (!inherits(x, "array")){
     stop("x must be a array.", call. = FALSE)
   }
   x <- as.vector(x)
@@ -44,7 +44,7 @@ arr2dl <- function(x, ...){
 #' arr2vbt(arr)
 #' @keywords array Vector.Binary.Tree
 arr2vbt <- function(x, ...){
-  if (class(x) != "array"){
+  if (!inherits(x, "array")){
     stop("x must be a array.", call. = FALSE)
   }
   x <- as.vector(x)

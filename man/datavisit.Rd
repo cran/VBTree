@@ -31,7 +31,7 @@ vbt
 
 #Setting subset in different forms, for example the pattern
 #"Strain-(900~1100)-(0.01, 1)-0.6" is desired:
-subunregdl <- list(c(1), c(1:5), c(2,4), c(1)) # undifined double list
+subunregdl <- list(c(1), c(1:5), c(2,4), c(1)) # undefined double list
 subregdl <- advbtinq(vbt, subunregdl) # regularized double list
 subvbt <- dl2vbt(subregdl) # sub vector binary tree
 subts <- vbt2ts(subvbt) # tensor
@@ -39,7 +39,6 @@ subarr <- vbt2arr(subvbt) # array
 subchrvec <- as.vector(subarr) # character vector
 
 #Visit the data through different methods:
-datavisit(datatest, subunregdl) # by integer vector
 datavisit(datatest, subunregdl) # by handmade double list
 datavisit(datatest, subregdl) # by defined double list
 datavisit(datatest, subvbt) # by vector binary tree
